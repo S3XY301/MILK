@@ -1,0 +1,27 @@
+# AMD / Intel / NVIDIA on Windows via DirectML — use a SEPARATE venv/conda env.
+# The tensorflow-directml-plugin stack does NOT work with tensorflow>=2.11 from requirements.txt.
+#
+# Suggested (see https://learn.microsoft.com/en-us/windows/ai/directml/gpu-tensorflow-plugin ):
+#   conda create -n milk-tfdml python=3.10 -y
+#   conda activate milk-tfdml
+#   pip install tensorflow-cpu==2.10.1
+#   pip install tensorflow-directml-plugin
+#
+# Plugin is discontinued but often still works for training; select this env as the Jupyter kernel.
+# Avoid h5py 3.0.0 / 3.1.0 (pin e.g. h5py>=3.8 if you hit load errors).
+#
+# Example: AMD Radeon RX 6750 XT (12 GB VRAM) + EfficientNetV2-L @ 480px
+#   - In efficientnet_v2l.ipynb set BATCH_SIZE to 16 first; if training runs cleanly, try 20-24.
+#   - If you hit out-of-memory, use 12 or 8, or IMG_SIZE = 384.
+#   - CPU-only training: use BATCH_SIZE 4-8.
+#
+# After pip install, pin NumPy 1.x (TF 2.10 breaks with NumPy 2.x):
+#   pip install "numpy>=1.23,<2"
+#
+# Installed on this machine:
+#   e:\RESEARCH_SHIT\MILK\.venv-tfdml
+# Jupyter kernel: "Python 3.10 (TF 2.10 + DirectML)"
+
+tensorflow-cpu==2.10.0
+tensorflow-directml-plugin
+numpy>=1.23,<2

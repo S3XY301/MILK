@@ -1,0 +1,9 @@
+# MILK ML notebooks — pin versions locally if you need reproducibility
+# AMD GPU on Windows: use a separate env — see requirements-directml-tf210.txt (TF 2.10 + plugin).
+tensorflow>=2.15,<3
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+Pillow>=10.0
+jupyter>=1.0
+scikit-learn>=1.3

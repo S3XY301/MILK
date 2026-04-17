@@ -1,0 +1,8 @@
+{
+  "model": "efficientnetv2l_multilabel_final.keras",
+  "thresholds": "efficientnetv2l_multilabel_final_thresholds.npy",
+  "test_loss": 0.017983291298151016,
+  "test_auc": 0.8918094635009766,
+  "test_macro_f1_tuned": 0.6811510513039702,
+  "n_test_samples": 1572
+}
